@@ -5,8 +5,9 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
  use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class LuckyController
+class LuckyController extends AbstractController
 {
 
     /**
@@ -25,14 +26,6 @@ class LuckyController
         return new Response('Welcome to first page');
 	}
 
-	/**
-     * @Route("/show/article/{article_name}")
-	*/
-    public function article($article_name)
-    {
-        return new Response('Future page to show the article: '.
-            $article_name);
-	}
-	//http://localhost:8000/show/article/ploitics   the article name will come from db
+
 }
 ?>

@@ -48,14 +48,14 @@ class LuckyController extends AbstractController
      * @Route("/practice/extend")
      */
     public function twig(){
-        return $this->render('article/extend.html.twig');
+        return $this->render('extend.html.twig');
     }
 
     /**
-     * @Route("/practice/example")
+     * @Route("/practice/include")
      */
     public function twigme(){
-        return $this->render('article/example.html.twig');
+        return $this->render('article/inlcude.html.twig');
     }
 }
 ?>

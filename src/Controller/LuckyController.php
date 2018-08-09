@@ -29,19 +29,20 @@ class LuckyController extends AbstractController
     /**
      * @Route("/news/{slug}")
      */
-    public function article($article_name= 'hello')
+    public function article($slug= 'hello')
     {
 
         $comments = [
-            'I ate a normal rock once. It did NOT taste like bacon!'.$article_name,
+            'I ate a normal rock once. It did NOT taste like bacon!'.$slug,
             'Woohoo! I m going on an all-asteroid diet!',
             'I like bacon too! Buy some from my site! bakinsomebacon.com',
         ];
-
+        dump($slug, $this);
         return $this->render('article/show.html.twig',[
-            'title' => ucwords(str_replace('-', ' ', $article_name)),
+            'title' => ucwords(str_replace('-', ' ', $slug)),
             'comments' => $comments,
         ]);
+
 
     }
     /**
@@ -57,5 +58,6 @@ class LuckyController extends AbstractController
     public function twigme(){
         return $this->render('article/inlcude.html.twig');
     }
+
 }
 ?>

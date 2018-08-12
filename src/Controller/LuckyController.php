@@ -19,7 +19,7 @@ class LuckyController extends AbstractController
 	}
 
 	/**
-     * @Route("/welcome")
+     * @Route("/welcome", name="app_welcome")
 	*/
     public function welcome()
     {
@@ -27,7 +27,7 @@ class LuckyController extends AbstractController
 	}
 
     /**
-     * @Route("/news/{slug}")
+     * @Route("/slug/{slug}")
      */
     public function article($slug= 'hello')
     {
@@ -37,7 +37,7 @@ class LuckyController extends AbstractController
             'Woohoo! I m going on an all-asteroid diet!',
             'I like bacon too! Buy some from my site! bakinsomebacon.com',
         ];
-        dump($slug, $this);
+        //dump($slug, $this);
         return $this->render('article/show.html.twig',[
             'title' => ucwords(str_replace('-', ' ', $slug)),
             'comments' => $comments,
@@ -46,18 +46,24 @@ class LuckyController extends AbstractController
 
     }
     /**
-     * @Route("/practice/extend")
+     * @Route("/practice/extend", name="app_extend")
      */
     public function twig(){
         return $this->render('extend.html.twig');
     }
 
     /**
-     * @Route("/practice/include")
+     * @Route("/practice/include", name="app_include")
      */
     public function twigme(){
         return $this->render('article/inlcude.html.twig');
     }
 
+    /**
+     * @Route("/home", name="app_home")
+     */
+    public function home(){
+        return $this->render('article/home.html.twig');
+    }
 }
 ?>

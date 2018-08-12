@@ -3,14 +3,39 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
+            <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+        {% endblock %}
     </head>
     <body>
-        {% block body %}Default Body{% endblock %}
+        {% block body %}
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">WebSiteName</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="{{ path('app_welcome') }}">Home</a></li>
+                        <li><a href="{{ path('app_extend') }}">Page 1</a></li>
+                        <li><a href="{{ path('app_include') }}">Page 2</a></li>
+                        <li><a href="{{ path('app_home') }}">Page 3</a></li>
+                    </ul>
+                </div>
+            </nav>
+        {% endblock %}
 
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+           <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+            <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        {% endblock %}
     </body>
 <footer>
-    {% block footer %}Default footer{% endblock %}
+    {% block footer %}
+        <div class="container text-center">
+            <span class="text-muted">Website powered by ABC</span>
+        </div>
+    {% endblock %}
 </footer>
 </html>

@@ -2,6 +2,7 @@
 // src/Controller/LuckyController.php
 namespace App\Controller;
 
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Response;
 
  use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -62,8 +63,16 @@ class LuckyController extends AbstractController
     /**
      * @Route("/home", name="app_home")
      */
-    public function home(){
+    public function home(LoggerInterface $logger){
+        $logger->info('test logger');
         return $this->render('article/home.html.twig');
+    }
+
+    /**
+     * @Route("/login", name="login_page")
+     */
+    public function login(){
+        return $this->render('login.html.twig');
     }
 }
 ?>

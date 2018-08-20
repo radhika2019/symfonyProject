@@ -1,0 +1,14 @@
+# app/config/config.yml
+framework:
+  # ...
+  templating:
+    engines: ['twig', 'php']
+
+# app/config/config.yml
+fos_user:
+  db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+  firewall_name: main
+  user_class: AppBundle\Entity\User
+  from_email:
+    address: "radhika@symfony.com"
+    sender_name: "radhika"

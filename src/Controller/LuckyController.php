@@ -12,11 +12,12 @@ class LuckyController extends AbstractController
 {
 
     /**
-     * @Route("/")
+     * @Route("/", name="home_page")
 	*/
     public function homepage()
     {
-        return new Response('This is homepage');
+
+        return $this->render('home.html.twig');
 	}
 
 	/**
@@ -60,19 +61,19 @@ class LuckyController extends AbstractController
         return $this->render('article/inlcude.html.twig');
     }
 
-    /**
-     * @Route("/home", name="app_home")
-     */
-    public function home(LoggerInterface $logger){
-        $logger->info('test logger');
-        return $this->render('article/home.html.twig');
-    }
+    #/**
+     #* @Route("/home", name="app_home")
+     #*/
+   # public function home(LoggerInterface $logger){
+    #    $logger->info('test logger');
+     #   return $this->render('article/home.html.twig');
+    #}
 
-    /**
-     * @Route("/login", name="login_page")
-     */
-    public function login(){
-        return $this->render('login.html.twig');
-    }
+    #/**
+    # * @Route("/login", name="login_page")
+    # */
+    #public function login(){
+    #    return $this->render('login.html.twig');
+    #}
 }
 ?>

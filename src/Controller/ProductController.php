@@ -94,13 +94,15 @@ class ProductController extends Controller
 
         $query->execute();
 
-       /* $sql=$query->getSQL();
+        $sql=$query->getSQL();
 
         var_dump($sql);
 
         $parameters=$query->getParameters();
-
-        var_dump($parameters);*/
+        echo "<pre>";
+        print_r($parameters);
+        echo "</pre>";
+        //var_dump($parameters);
 
         return new Response("Record Deleted");
 

@@ -15,8 +15,9 @@ security:
             anonymous: true
             logout: ~
             # activate different ways to authenticate
+            logout_on_user_change: true
             form_login:
-                #csrf_token_generator: security.csrf.token_manager
+                csrf_token_generator: security.csrf.token_manager
             # http_basic: true
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
 
